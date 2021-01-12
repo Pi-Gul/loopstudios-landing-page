@@ -66,12 +66,18 @@ header {
 .about-us {
     padding: 0 20px;
     margin-bottom: var(--section-blank);
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
 }
 .about-img {
     height: 250px;
     background-image: url('../images/mobile/image-interactive.jpg');
     background-size: cover;
     margin-bottom: 25px;
+}
+.about-text {
+    display: flex;
+    flex-direction: column;
 }
 .about-text h1 {
     font-size: 2rem;
@@ -81,7 +87,7 @@ header {
 .about-text p {
     text-align: center;
     line-height: 1.5;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -90,7 +96,7 @@ header {
     margin-bottom: var(--section-blank);
     padding: 0 20px;
 }
-.our-creations h1 {
+.creation-top h1 {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
@@ -104,6 +110,8 @@ header {
     border: 1px solid black;
     box-shadow: 0 0 white;
     margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
 }
 .creation-button:hover {
     cursor: pointer;
@@ -140,9 +148,9 @@ header {
     background-image: url('../images/mobile/image-fisheye.jpg')
 }
 .creation-card {
-    height: 100px;
+    height: 120px;
     background-size: cover;
-    padding-top: 40px;
+    padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
@@ -154,21 +162,27 @@ header {
 }
 .creation-card h2 {
     color: white;
-    width: 30%;
-    font-size: 1.3rem;
+    width: 40%;
+    font-size: 1.5rem;
 }
 
 
 /* FOOTER */
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     color: white;
-    padding: 30px 20px;
+    padding: 50px 20px;
 }
-footer .logo {
-    margin-bottom: 20px;
+.footer-one {
+    display: flex;
+    flex-direction: column;
 }
-footer .logo img {
+.footer-one .logo {
+    margin-bottom: 40px;
+}
+.footer-one .logo img {
     display: block;
     margin: 0 auto;
 }
@@ -176,25 +190,29 @@ footer .logo img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .footer-nav li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     list-style: none;
 }
 .footer-nav a {
     text-decoration: none;
     color: white;
 }
-footer .social {
+.footer-two {
     display: flex;
-    width: 40%;
+    flex-direction: column;
+}
+.footer-two .social {
+    display: flex;
+    width: 45%;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
-footer p {
+.footer-two p {
     text-align: center;
 }
 
@@ -206,3 +224,142 @@ footer p {
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+@media only screen and (min-width: 900px) {
+    body {
+        width: 80%;
+        max-width: 1000px;
+    }
+    .ribbon {
+        padding: 0 20px;
+    }
+    .hamburger-icon {
+        display: none;
+    }
+    .main-nav {
+        position: static;
+        background-color: hsla(0, 0%, 0%, 0);
+        height: auto;
+        padding: 0;
+        width: 50%;
+    }
+    .main-nav ul {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .main-nav li {
+        margin-bottom: 0px;
+    }
+    .banner {
+        width: 50%;
+        padding: 30px;
+    }
+    .banner h1 {
+        font-size: 3rem;
+    }
+    .about-us {
+        grid-template: 1fr 1fr 1fr / repeat(6, 1fr);
+    }
+    .about-img {
+        height: 400px;
+        grid-area: 1 / 1 / 4 / 5;
+        margin: 0;
+    }
+    .about-text {
+        grid-area: 2 / 4 / 4 / 7;
+        background-color: white;
+        justify-content: flex-end;
+        padding-left: 70px;
+    }
+    .about-text h1 {
+        font-size: 3rem;
+        text-align: left;
+    }
+    .about-text p {
+        font-size: 1rem;
+        text-align: left;
+        margin: 0;
+    }
+    .creation-button.top {
+        display: block;
+        margin: 0;
+    }
+    .creation-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .creation-top h1 {
+        margin: 0;
+    }
+    .creation-cards-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .creation-card {
+        width: 200px;
+        height: 350px;
+    }
+    .deep-earth {
+        background-image: url('../images/desktop/image-deep-earth.jpg')
+    }
+    .night-arcade {
+        background-image: url('../images/desktop/image-night-arcade.jpg')
+    }
+    .soccer-team-vr {
+        background-image: url('../images/desktop/image-soccer-team.jpg')
+    }
+    .the-grid {
+        background-image: url('../images/desktop/image-grid.jpg')
+    }
+    .from-up-above-vr {
+        background-image: url('../images/desktop/image-from-above.jpg')
+    }
+    .pocket-borealis {
+        background-image: url('../images/desktop/image-pocket-borealis.jpg')
+    }
+    .the-curiosity {
+        background-image: url('../images/desktop/image-curiosity.jpg')
+    }
+    .make-it-fisheye {
+        background-image: url('../images/desktop/image-fisheye.jpg')
+    }
+    .creation-button.bottom {
+        display: none;
+    }
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 150px;
+        padding: 40px 20px;
+    }
+    .footer-one {
+        width: 40%;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .footer-one .logo {
+        margin: 0;
+    }
+    .footer-nav {
+        width: 100%;
+    }
+    .footer-nav ul {
+        flex-direction: row;
+        margin: 0;
+        justify-content: space-between;
+    }
+    .footer-nav ul li {
+        margin: 0;
+    }
+    .footer-two {
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .footer-two .social {
+        margin: 0;
+        width: 60%;
+    }
