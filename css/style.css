@@ -4,6 +4,8 @@
     box-sizing: border-box;
     font-size: 15px;
     --section-blank: 100px;
+    --Dark-Gray: hsl(0, 0%, 55%);
+    --Very-Dark-Gray: hsl(0, 0%, 41%);
     font-family: 'Alata', sans-serif;
 }
 body {
@@ -21,7 +23,7 @@ header {
     height: 600px;
     background-image: url('../images/mobile/image-hero.jpg');
     background-size: cover;
-    padding: 20px 10px;
+    padding: 30px 20px;
     margin-bottom: var(--section-blank);
     position: relative;
 }
@@ -31,12 +33,15 @@ header {
     align-items: center;
     margin-bottom: 150px;
 }
+.close-icon {
+    display: none;
+}
 .main-nav {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 0px;
-    height: 500px;
+    height: 535px;
     background-color: black;
     width: 375px;
     padding-top: 50px;
@@ -90,8 +95,10 @@ header {
 .about-text p {
     text-align: center;
     line-height: 1.5;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
+    color: var(--Dark-Gray);
+    font-size: 1.08rem;
 }
 
 /* OUR CREATIONS */
@@ -118,6 +125,8 @@ header {
 }
 .creation-button:hover {
     cursor: pointer;
+    background-color: black;
+    color: white;
 }
 .creation-button.top {
     display: none;
@@ -151,6 +160,7 @@ header {
     background-image: url('../images/mobile/image-fisheye.jpg')
 }
 .creation-card {
+    position: relative;
     height: 120px;
     background-size: cover;
     padding-top: 50px;
@@ -163,10 +173,20 @@ header {
     cursor: pointer;
     filter: brightness(170%);
 }
+.backdrop-dim {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
 .creation-card h2 {
     color: white;
-    width: 40%;
-    font-size: 1.5rem;
+    width: 45%;
+    font-size: 1.7rem;
+    backdrop-filter: brightness(60%);
+    position: absolute;
 }
 
 
@@ -198,6 +218,11 @@ footer {
 .footer-nav li {
     margin-bottom: 20px;
     list-style: none;
+    padding-bottom: 5px;
+}
+.footer-nav li:hover {
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
 }
 .footer-nav a {
     text-decoration: none;
@@ -215,8 +240,16 @@ footer {
     margin-right: auto;
     margin-bottom: 20px;
 }
+.footer-two .social a {
+    padding-bottom: 5px;
+}
+.footer-two .social a:hover {
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
+}
 .footer-two p {
     text-align: center;
+    color: var(--Dark-Gray);
 }
 
 /* ATTRIBUTION */
@@ -230,13 +263,19 @@ footer {
 
 @media only screen and (min-width: 1100px) {
     body {
-        width: 80%;
-        max-width: 1000px;
+        width: 100%;
+        max-width: 1200px;
+    }
+    header {
+        padding: 30px 10%;
     }
     .ribbon {
         padding: 0 20px;
     }
     .hamburger-icon {
+        display: none;
+    }
+    .close-icon {
         display: none;
     }
     .main-nav {
@@ -254,6 +293,11 @@ footer {
     }
     .main-nav li {
         margin-bottom: 0px;
+        padding-bottom: 5px;
+    }
+    .main-nav li:hover {
+        border-bottom: 1px solid white;
+        padding-bottom: 4px;
     }
     .banner {
         width: 50%;
@@ -264,6 +308,7 @@ footer {
     }
     .about-us {
         grid-template: 1fr 1fr 1fr / repeat(6, 1fr);
+        padding: 0 10%;
     }
     .about-img {
         height: 400px;
@@ -277,13 +322,17 @@ footer {
         padding-left: 70px;
     }
     .about-text h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         text-align: left;
     }
     .about-text p {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: left;
         margin: 0;
+        width: 100%;
+    }
+    .our-creations {
+        padding: 0 10%;
     }
     .creation-button.top {
         display: block;
@@ -308,9 +357,13 @@ footer {
         height: 350px;
         padding-top: 250px;
     }
+    .backdrop-dim {
+        width: 100%;
+        height: 350px;
+    }
     .creation-card h2 {
-        font-size: 1.5rem;
-        width: 90%;
+        font-size: 1.8rem;
+        width: 75%;
     }
     .deep-earth {
         background-image: url('../images/desktop/image-deep-earth.jpg')
@@ -343,7 +396,7 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         height: 150px;
-        padding: 40px 20px;
+        padding: 40px 10%;
     }
     .footer-one {
         width: 40%;
